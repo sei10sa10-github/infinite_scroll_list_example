@@ -1,16 +1,14 @@
 # infinite_scroll_list_example
 
-A new Flutter project.
+Code to try how to do infinite scroll using ScrollController and VisibilityDetector
 
-## Getting Started
+## Link 
 
-This project is a starting point for a Flutter application.
+- [ScrollController](https://api.flutter.dev/flutter/widgets/ScrollController-class.html)
+- [VisibilityDetector](https://pub.dev/packages/visibility_detector)
 
-A few resources to get you started if this is your first Flutter project:
+## Note
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+If I tried to use ScrollController to judge whether I should load the second page, it doesn't work well for the case that I want to initiate pre-fetch in the middle of list of items.
+If I trigger the request to load the next contents at the bottom of the page, it works OK.
+On the other hand, the solution using VisibilityDetector works well even for the case of the pre-fetching in the middle.
